@@ -21,17 +21,16 @@ COPY node-${NODE_VERSION}.tar.gz .
 
 RUN tar xzf node-${NODE_VERSION}.tar.gz
 WORKDIR /home/builder/node-${NODE_VERSION}
-RUN BROTLIFLAGS=$( echo ${NODE_VERSION} | grep -qi v10 && echo '' || echo '--shared-brotli') &&\
-  ./configure --prefix=/opt/node-${NODE_VERSION}\
-    --without-dtrace\
-    --without-etw\
-    --without-inspector\
-    --shared-libuv\
-    --shared-nghttp2\
-    --shared-openssl\
-    --shared-zlib\
-    $BROTLIFLAGS\
-    --shared-cares
+RUN ./configure --prefix=/opt/node-${NODE_VERSION}\
+  --without-dtrace\
+  --without-etw\
+  --without-inspector\
+  --shared-libuv\
+  --shared-nghttp2\
+  --shared-openssl\
+  --shared-zlib\
+  --shared-brotli\
+  --shared-cares
 RUN export NCPUS=$(grep '^processor' /proc/cpuinfo | wc -l) && make -j $NCPUS -l $NCPUS
 
 USER root:root

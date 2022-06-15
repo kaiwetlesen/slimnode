@@ -1,10 +1,11 @@
 #!/bin/bash
 
+# Current releases:
 latest='v18.3.0'
-dubnium='v10.24.1'
-erbium='v12.22.12'
-fermium='v14.19.3'
 gallium='v16.15.1'
+fermium='v14.19.3'
+erbium='v12.22.12'
+# Source: https://nodejs.org/en/about/releases/
 
 if [ -z "$NODE_VERSION" ]; then
 	NODE_VERSION='latest'
