@@ -7,5 +7,7 @@ is great for people who don't wish to wait multiple minutes for
 their container to create or for people who want to try and avoid
 application bloat.
 
+Visit us on [Docker Hub](https://hub.docker.com/repository/docker/kwetlesen/slimnode)!
+
 (Truly though, if you didn't want code bloat then you wouldn't use
 NodeJS would you? :) )
